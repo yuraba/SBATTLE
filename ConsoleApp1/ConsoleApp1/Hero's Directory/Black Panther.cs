@@ -9,4 +9,10 @@ public class Black_Panther : Heros
     {
         base.AddSuperpower(superpower, power);
     }
+    
+    
+    public override string ToString()
+    {
+        return "Black Panther";
+    }
 }
