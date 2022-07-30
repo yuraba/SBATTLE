@@ -10,4 +10,29 @@ public abstract class Heros
     {
         superpower.AddSuperpower(this,power);
     }
+    
+    public bool IsAlive => Health > 0;
+    
+    public int Attack()
+    {
+        if (Armor>0)
+            return Brunt;
+        if (Brunt == 1)
+            return 1;
+        return Brunt--;
+    }
+
+    public void Defense(int power)
+    {
+        if (Armor > power)
+        {
+            Armor -= power / 2;
+        }
+        else
+        {
+            Health -= (-Armor + power);
+            Armor = 0;
+        }
+        
+    }
 }
