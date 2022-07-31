@@ -1,8 +1,8 @@
 ﻿using ConsoleApp1;
 
-class MyClass
+class  MyClass
 {
-    public static void Main()
+    public  static void Main()
     {
         Console.WriteLine("exit - q; start any button");
         string ans = Console.ReadLine();
@@ -26,16 +26,24 @@ class MyClass
             hero4.AddSuperpower(
                 new AddBrunt(), SuperPowerGenerator.GenerateSuperpower()
             );
+            M();
             Battle.Fight(hero1, hero2);
-            Battle.Fight(hero3, hero4);
             
-            Console.WriteLine("\n \nContinue? (y/n)");
+            async void M()
+            {
+                await Task.Run(() => Battle.Fight(hero3, hero4));
+            }
+            
+            Console.WriteLine("\n\nContinue? (y/n) \n\n");
             string answ = Console.ReadLine();
 
             if (answ == "n")
             {
                 break;
             }
+            
+            
+            
         }
     }
 }
