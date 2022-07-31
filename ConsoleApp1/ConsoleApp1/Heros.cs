@@ -24,6 +24,10 @@ public abstract class Heros
 
     public void Defense(int power)
     {
+        if (Armor == 0)
+        {
+            Health -= power;
+        }
         if (Armor > power)
         {
             Armor -= power / 2;
@@ -34,5 +38,10 @@ public abstract class Heros
             Armor = 0;
         }
         
+    }
+    
+    public override string ToString()
+    {
+        return "Base Hero";
     }
 }

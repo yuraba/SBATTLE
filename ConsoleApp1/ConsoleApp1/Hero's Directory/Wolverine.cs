@@ -4,4 +4,10 @@ public class Wolverine : Heros
 {
     public override int Armor { get; set; } = 12;
     public override int Brunt { get; set; } = 8;
+    
+    
+    public override string ToString()
+    {
+        return "Wolverine";
+    }
 }
